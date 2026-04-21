@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openrouter-mcp"
+version = "1.0.0"
+description = "MCP server for OpenRouter model discovery — query 300+ AI models with pricing, capabilities, and context limits"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  {name = "Trung Hoang", email = "trung@lumishoang.com"}
+]
+keywords = ["mcp", "openrouter", "llm", "ai", "model-discovery"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "mcp>=1.0.0",
+]
+
+[project.scripts]
+openrouter-mcp = "openrouter_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/lumishoang/openrouter-mcp"
+Repository = "https://github.com/lumishoang/openrouter-mcp.git"
+Issues = "https://github.com/lumishoang/openrouter-mcp/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
