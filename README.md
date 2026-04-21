@@ -20,7 +20,7 @@ pip install openrouter-mcp
 
 ### With OpenClaw
 
-Add to your `openclaw.json`:
+Add to your `openclaw.json` MCP servers config:
 
 ```json
 {
@@ -37,7 +37,20 @@ Add to your `openclaw.json`:
 }
 ```
 
-> `OPENROUTER_API_KEY` is optional but recommended for higher rate limits.
+Then restart the gateway. Agents can now use the MCP tools to query OpenRouter models.
+
+> **Note:** `OPENROUTER_API_KEY` is optional but recommended for higher rate limits (200 req/min vs 20 req/min).
+> Get your key at: https://openrouter.ai/keys
+
+**Example agent usage:**
+
+```python
+# Agent can now call MCP tools like:
+list_models(sort_by="context_length")
+search_models(query="claude", max_input_price=5.0)
+get_model(model_id="anthropic/claude-sonnet-4.6")
+compare_models(model_ids="qwen/qwen3.6-plus,anthropic/claude-sonnet-4.6")
+```
 
 ### Standalone (stdio)
 
